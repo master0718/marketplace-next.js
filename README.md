@@ -17,8 +17,8 @@ This project is a responsive marketing-focused web application built using **Nex
 
 1. Clone the repository:
   ```bash
-  git clone https://github.com/your-username/nextjs-assignment.git
-  cd nextjs-assignment
+  git clone https://github.com/master0718/marketplace-next.js.git
+  cd marketplace-next.js
 
 2. Install dependencies:
   npm install
