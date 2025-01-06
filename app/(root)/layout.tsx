@@ -4,9 +4,16 @@ import { createContext, useState } from 'react';
 import Footer from "@/components/footer";
 import Header from "@/components/shared/header";
 
-export const SearchContext = createContext({
+// Define the shape of the context
+interface SearchContextType {
+  keyword: string;
+  setKeyword: (value: string) => void;
+}
+
+// Create the context with a default value
+export const SearchContext = createContext<SearchContextType>({
   keyword: '',
-  setKeyword: (value: string) => { },
+  setKeyword: () => { }, // No-op function to avoid unused warning
 });
 
 export default function RootLayout({
@@ -15,11 +22,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [keyword, setKeyword] = useState('');
+
   return (
     <SearchContext.Provider value={{ keyword, setKeyword }}>
-      <div className='flex h-screen flex-col'>
+      <div className="flex h-screen flex-col">
         <Header />
-        <main className='flex-1 wrapper'>{children}</main>
+        <main className="flex-1 wrapper">{children}</main>
         <Footer />
       </div>
     </SearchContext.Provider>

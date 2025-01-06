@@ -6,3 +6,18 @@ export type Product = z.infer<typeof insertProductSchema> & {
   rating: string;
   createdAt: Date;
 };
+
+export interface Products {
+  name: string;
+  slug: string;
+  category: string;
+  description: string;
+  images: string[];
+  price: number;
+  brand: string;
+  rating: number;
+  numReviews: number;
+  stock: number;
+  isFeatured: boolean;
+  banner: string | null;
+}
