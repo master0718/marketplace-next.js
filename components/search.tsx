@@ -12,6 +12,7 @@ export default function SearchInput({ keyword, setKeyword }: SearchInputProps) {
     setKeyword(e.target.value);
   };
 
+  
   return (
     <div className="search-container search-input-container">
       <div className="search">
